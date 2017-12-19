@@ -1,5 +1,6 @@
 import React from 'react';
-
+import {connect} from 'react-redux';
+import {makeGuess} from '../actions';
 import './guess-form.css';
 
 export default class GuessForm extends React.Component {
@@ -28,7 +29,7 @@ export default class GuessForm extends React.Component {
           aria-labelledby="feedback"
           ref={input => (this.input = input)}
           required
-        />
+         />
         <button 
           type="submit"
           name="submit"
