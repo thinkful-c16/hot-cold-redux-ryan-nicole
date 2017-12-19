@@ -1,12 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {makeGuess} from '../actions';
+import {makeGuess, setAuralStatus} from '../actions';
 import './guess-form.css';
 
 export class GuessForm extends React.Component {
   onSubmit(event) {
     event.preventDefault();
     this.props.dispatch(makeGuess(this.input.value))
+    this.props.dispatch(setAuralStatus())
     this.input.value = '';
     this.input.focus();
   }
